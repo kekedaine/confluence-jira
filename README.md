@@ -32,10 +32,10 @@ thông tin kết nối db xem trong file  ```database-confluence.env``` và ```d
     - thông tin database host xem bảng bên dưới
 
 
-| Phần mềm     | dbhost      |
-| ------------ | ----------- |
-| jira         | jiradb      |
-| confluence   | confluencedb|
+| Phần mềm     | dbhost      | db port |
+| ------------ | ----------- | ------- |
+| jira         | jiradb      |  5432   |
+| confluence   | confluencedb|  5432   |
 
 
 Thông tin database
