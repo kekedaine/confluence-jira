@@ -37,6 +37,13 @@ thông tin kết nối db xem trong file  ```database-confluence.env``` và ```d
 | confluence   | confluencedb|
 
 
+Thông tin database
+
+| Phần mềm     | database info file     |
+| ------------ | ---------------------- |
+| jira         | database-jira.env      |
+| confluence   | database-confluence.env|
+
 
 để crack thì chạy lệnh sau 
 
