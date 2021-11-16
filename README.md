@@ -13,7 +13,7 @@ https://git.mtz.pw/vouu/confluence-build
 ### chạy phần mềm
 
 ```
-git clone https://git.mtz.pw/vouu/confluence-jira.git
+git clone https://github.com/vncloudsco/confluence-jira.git
 cd confluence-jira
 docker-compose up -d
 ``` 
