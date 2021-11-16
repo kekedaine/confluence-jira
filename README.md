@@ -17,6 +17,7 @@ git clone https://github.com/vncloudsco/confluence-jira.git
 cd confluence-jira
 docker-compose up -d
 ``` 
+sau khi chạy thì vào các port tương ứng để cấu hình phần mềm trên máy chủ
 
 | Phần mềm     | Port |
 | ------------ | ----------- |
