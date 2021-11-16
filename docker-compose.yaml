@@ -1,0 +1,61 @@
+version: '3.4'
+services:
+  confluence:
+    image: vouu/confluence:7.14.1
+    container_name: confluence-srv
+    environment:
+      - TZ='Asia/Ho_Chi_Minh'
+    depends_on:
+      - confluencedb
+    ports:
+      - "8090:8090"
+    volumes:
+      - ./confluence_data:/var/confluence
+    restart: always
+    networks:
+      - network-bridge
+  jira:
+    image: vouu/jira:latest
+    container_name: jira-srv
+    environment:
+      - TZ='Asia/Ho_Chi_Minh'
+    depends_on:
+      - jiradb
+    ports:
+      - "8080:8080"
+    volumes:
+      - jira_data:/var/jira
+    restart: always
+    networks:
+      - network-bridge
+  confluencedb:
+    image: postgres
+    container_name: postgresql-confluence
+    env_file:
+      - database-confluence.env
+    # ports:
+    #   - "5432:5432"
+    volumes:
+      - ./database-confluence:/var/lib/postgresql/data/
+    restart: always
+    networks:
+      - network-bridge
+  jiradb:
+    image: postgres
+    container_name: postgresql-jira
+    env_file:
+      - database-jira.env
+    # ports:
+    #   - "5432:5432"
+    volumes:
+      - ./database-jiradb:/var/lib/postgresql/data/
+    restart: always
+    networks:
+      - network-bridge
+
+networks:
+  network-bridge:
+    driver: bridge
+volumes:
+  jira_data:
+    external: false
